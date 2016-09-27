@@ -19,11 +19,17 @@
                             </thead>
 
                             <tbody>
+                            
                             <?php foreach($romms as $romm): ?>
                             <tr>
+                                <?php 
+                                    if($romm->status == 'A')
+                                        {$status = 'Ativo';};
+                                    if($romm->status == 'I')
+                                        {$status = 'Inativo';} ?>
                                 <td style="vertical-align: middle"><?php echo $romm->id;?></td>
                                 <td style="vertical-align: middle"><?php echo $romm->name;?></td>
-                                <td style="vertical-align: middle"><?php echo $romm->email;?></td>
+                                <td style="vertical-align: middle"><?php echo $status;?></td>
                                 <td style="vertical-align: middle">
                                     <p><a href="{!! route('romm.edit', ['id' => $romm->id]) !!}">Editar</a></p>
                                     <p><a href="{!! route('romm.destroy', ['id' => $romm->id]) !!}">Deletar</a></p>
