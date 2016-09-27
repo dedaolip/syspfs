@@ -43,6 +43,15 @@ Route::group(['prefix' => 'salas'], function() {
     Route::put('update/{id}',    ['as' => 'romm.update', 'uses' => 'RommController@update']);
 });
 
+Route::group(['prefix' => 'notebooks'], function() {
+    Route::get('',                  ['as' => 'not.index',  'uses' => 'LaptopController@index']);
+    Route::get('create',            ['as' => 'not.create', 'uses' => 'LaptopController@create']);
+    Route::post('store',            ['as' => 'not.store',  'uses' => 'LaptopController@store']);
+    Route::get('{id}/destroy',      ['as' => 'not.destroy', 'uses' => 'LaptopController@destroy']);
+    Route::get('{id}/edit',         ['as' => 'not.edit',   'uses' => 'LaptopController@edit']);
+    Route::put('update/{id}',       ['as' => 'not.update', 'uses' => 'LaptopController@update']);
+});
+
 Route::group(['prefix' => 'reservas'], function() {
     Route::get('',                  ['as' => 'reservas.index',  'uses' => 'ReserveController@index']);
 });

@@ -10,6 +10,7 @@
                 <div class="panel-body">
                     <p><a href="{!! route('user.index') !!}" style="color: black">Usuários</a></p>
                     <p><a href="{!! route('romm.index') !!}" style="color: black">Salas</a></p>
+                    <p><a href="{!! route('not.index') !!}" style="color: black">Notebooks</a></p>
                 </div>
             </div>
         </div>
