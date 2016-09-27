@@ -13,6 +13,7 @@
                     <p><a href="{!! route('not.index') !!}" style="color: black">Notebooks</a></p>
                     <p><a href="{!! route('mic.index') !!}" style="color: black">Microfones</a></p>
                     <p><a href="{!! route('project.index') !!}" style="color: black">Projetores</a></p>
+                    <p><a href="{!! route('sound.index') !!}" style="color: black">Aparelhos de Som</a></p>
                 </div>
             </div>
         </div>

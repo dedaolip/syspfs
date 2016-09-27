@@ -70,6 +70,15 @@ Route::group(['prefix' => 'projetores'], function() {
     Route::put('update/{id}',       ['as' => 'project.update', 'uses' => 'ProjectorController@update']);
 });
 
+Route::group(['prefix' => 'sons'], function() {
+    Route::get('',                  ['as' => 'sound.index',  'uses' => 'SoundController@index']);
+    Route::get('create',            ['as' => 'sound.create', 'uses' => 'SoundController@create']);
+    Route::post('store',            ['as' => 'sound.store',  'uses' => 'SoundController@store']);
+    Route::get('{id}/destroy',      ['as' => 'sound.destroy', 'uses' => 'SoundController@destroy']);
+    Route::get('{id}/edit',         ['as' => 'sound.edit',   'uses' => 'SoundController@edit']);
+    Route::put('update/{id}',       ['as' => 'sound.update', 'uses' => 'SoundController@update']);
+});
+
 Route::group(['prefix' => 'reservas'], function() {
     Route::get('',                  ['as' => 'reservas.index',  'uses' => 'ReserveController@index']);
 });
