@@ -52,6 +52,15 @@ Route::group(['prefix' => 'notebooks'], function() {
     Route::put('update/{id}',       ['as' => 'not.update', 'uses' => 'LaptopController@update']);
 });
 
+Route::group(['prefix' => 'michofones'], function() {
+    Route::get('',                  ['as' => 'mic.index',  'uses' => 'MicrophoneController@index']);
+    Route::get('create',            ['as' => 'mic.create', 'uses' => 'MicrophoneController@create']);
+    Route::post('store',            ['as' => 'mic.store',  'uses' => 'MicrophoneController@store']);
+    Route::get('{id}/destroy',      ['as' => 'mic.destroy', 'uses' => 'MicrophoneController@destroy']);
+    Route::get('{id}/edit',         ['as' => 'mic.edit',   'uses' => 'MicrophoneController@edit']);
+    Route::put('update/{id}',       ['as' => 'mic.update', 'uses' => 'MicrophoneController@update']);
+});
+
 Route::group(['prefix' => 'reservas'], function() {
     Route::get('',                  ['as' => 'reservas.index',  'uses' => 'ReserveController@index']);
 });
