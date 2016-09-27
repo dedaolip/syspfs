@@ -8,8 +8,8 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <a href="{!! route('user.index') !!}" style="color: black">Usuários</a>
-                    <a href="{!! route('romm.index') !!}" style="color: black">Salas</a>
+                    <p><a href="{!! route('user.index') !!}" style="color: black">Usuários</a></p>
+                    <p><a href="{!! route('romm.index') !!}" style="color: black">Salas</a></p>
                 </div>
             </div>
         </div>
