@@ -34,6 +34,15 @@ Route::group(['prefix' => 'usuarios'], function() {
     Route::put('update/{users}',    ['as' => 'user.update', 'uses' => 'UserController@update']);
 });
 
+Route::group(['prefix' => 'salas'], function() {
+    Route::get('',                  ['as' => 'romm.index',  'uses' => 'RommController@index']);
+    Route::get('create',            ['as' => 'romm.create', 'uses' => 'RommController@create']);
+    Route::post('store',            ['as' => 'romm.store',  'uses' => 'RommController@store']);
+    Route::get('{id}/destroy', 		['as' => 'romm.destroy', 'uses' => 'RommController@destroy']);
+    Route::get('{id}/edit',         ['as' => 'romm.edit',   'uses' => 'RommController@edit']);
+    Route::put('update/{romm}',    ['as' => 'romm.update', 'uses' => 'RommController@update']);
+});
+
 Route::group(['prefix' => 'reservas'], function() {
     Route::get('',                  ['as' => 'reservas.index',  'uses' => 'ReserveController@index']);
 });
