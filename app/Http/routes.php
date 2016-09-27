@@ -40,7 +40,7 @@ Route::group(['prefix' => 'salas'], function() {
     Route::post('store',            ['as' => 'romm.store',  'uses' => 'RommController@store']);
     Route::get('{id}/destroy', 		['as' => 'romm.destroy', 'uses' => 'RommController@destroy']);
     Route::get('{id}/edit',         ['as' => 'romm.edit',   'uses' => 'RommController@edit']);
-    Route::put('update/{romm}',    ['as' => 'romm.update', 'uses' => 'RommController@update']);
+    Route::put('update/{id}',    ['as' => 'romm.update', 'uses' => 'RommController@update']);
 });
 
 Route::group(['prefix' => 'reservas'], function() {

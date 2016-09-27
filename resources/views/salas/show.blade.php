@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="col-lg-10">
-                            <a href="usuarios\create" class="col-lg-10">Novo</a>
+                            <a href="{!! route('romm.create') !!}" class="col-lg-10">Novo</a>
                             
 
                             
