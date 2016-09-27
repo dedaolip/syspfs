@@ -12,6 +12,7 @@
                     <p><a href="{!! route('romm.index') !!}" style="color: black">Salas</a></p>
                     <p><a href="{!! route('not.index') !!}" style="color: black">Notebooks</a></p>
                     <p><a href="{!! route('mic.index') !!}" style="color: black">Microfones</a></p>
+                    <p><a href="{!! route('project.index') !!}" style="color: black">Projetores</a></p>
                 </div>
             </div>
         </div>

@@ -61,6 +61,15 @@ Route::group(['prefix' => 'michofones'], function() {
     Route::put('update/{id}',       ['as' => 'mic.update', 'uses' => 'MicrophoneController@update']);
 });
 
+Route::group(['prefix' => 'projetores'], function() {
+    Route::get('',                  ['as' => 'project.index',  'uses' => 'ProjectorController@index']);
+    Route::get('create',            ['as' => 'project.create', 'uses' => 'ProjectorController@create']);
+    Route::post('store',            ['as' => 'project.store',  'uses' => 'ProjectorController@store']);
+    Route::get('{id}/destroy',      ['as' => 'project.destroy', 'uses' => 'ProjectorController@destroy']);
+    Route::get('{id}/edit',         ['as' => 'project.edit',   'uses' => 'ProjectorController@edit']);
+    Route::put('update/{id}',       ['as' => 'project.update', 'uses' => 'ProjectorController@update']);
+});
+
 Route::group(['prefix' => 'reservas'], function() {
     Route::get('',                  ['as' => 'reservas.index',  'uses' => 'ReserveController@index']);
 });
