@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         //dd($request->user()->name);
         if($request->user()->office == 2){
-            return view('reservas.show');
+            return redirect(route('reserve.index'));
         }
         else{
             return view('home');

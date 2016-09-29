@@ -80,5 +80,10 @@ Route::group(['prefix' => 'sons'], function() {
 });
 
 Route::group(['prefix' => 'reservas'], function() {
-    Route::get('',                  ['as' => 'reservas.index',  'uses' => 'ReserveController@index']);
+    Route::get('',                  ['as' => 'reserve.index',  'uses' => 'ReserveController@index']);
+    Route::post('create',            ['as' => 'reserve.create', 'uses' => 'ReserveController@create']);
+});
+
+Route::group(['prefix' => 'reservas'], function() {
+    Route::get('',                  ['as' => 'reserve.index',  'uses' => 'ReserveController@index']);
 });

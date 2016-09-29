@@ -33,9 +33,11 @@ class CreateReservesTable extends Migration
             $table->integer('id_sound')->unsigned();
             $table->foreign('id_sound')->references('id')->on('sounds');
 
-            $table->datetime('dtahini');
+            $table->date('date');
 
-            $table->datetime('dtahend');
+            $table->time('hbegin');
+
+            $table->time('hend');
             $table->timestamps();
         });
     }
