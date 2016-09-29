@@ -46,6 +46,14 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                    @if (Auth::guest())
+                    @else
+                    <?php
+                        if(Auth::user()->id != 2){
+                            echo "<li><a href=\"{{ url('/cadastro') }}\">CadastrosTeste</a></li>";
+                        }
+                    ?>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->

@@ -18,8 +18,9 @@
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
-Route::get('/', 'HomeController@index');
+Route::get('/home', 'ReserveController@index');
+Route::get('/', 'ReserveController@index');
+Route::get('/cadastro', 'HomeController@index');
 
 Route::auth();
 
