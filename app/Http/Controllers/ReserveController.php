@@ -18,10 +18,25 @@ class ReserveController extends Controller
     
 	public function index(Request $request)
     {
-        
-	    $reserves = DB::table('v_reservas')->get();
+    	//dd($request->user()->name);
+
+        if($request->user()->office == 2){
+            $reserves = DB::table('v_reservas')
+            			->where('id_usuario', $request->user()->id)
+				        ->get();
+		    //dd($reserves);
+		    return view('reservas.show', ['reserves' => $reserves]);
+        }
+        else{
+            $reserves = DB::table('v_reservas')->get();
+		    //dd($reserves);
+		    return view('reservas.show', ['reserves' => $reserves]);
+        }
+
+
+	    //$reserves = DB::table('v_reservas')->get();
 	    //dd($reserves);
-	    return view('reservas.show', ['reserves' => $reserves]);
+	    //return view('reservas.show', ['reserves' => $reserves]);
         
     }
 
