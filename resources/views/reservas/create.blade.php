@@ -7,7 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Reserva de Sala</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{!! route('romm.store')!!}">
+                    <form class="form-horizontal" role="form" method="POST" action="{!! route('reserve.store')!!}">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -30,7 +30,7 @@
 
 
                         <div class="form-group">
-                            <label for="date" class="col-md-4 control-label">Salas Disponíveis</label>
+                            <label for="id_romm" class="col-md-4 control-label">Salas Disponíveis</label>
                             <div class="col-md-5">
                                 <select class="form-control" name="id_romm">
                                         <?php foreach($salas as $sala): ?>
@@ -41,9 +41,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="date" class="col-md-4 control-label">Projetores Disponíveis</label>
+                            <label for="id_proj" class="col-md-4 control-label">Projetores Disponíveis</label>
                             <div class="col-md-5">
-                                <select class="form-control" name="d_proj">
+                                <select class="form-control" name="id_proj">
                                         <?php foreach($projetores as $projetor): ?>
                                             <option value="<?php echo $projetor->id?>"><?php echo $projetor->name?></option>
                                         <?php endforeach;?>
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="date" class="col-md-4 control-label">Notebooks Disponíveis</label>
+                            <label for="id_not" class="col-md-4 control-label">Notebooks Disponíveis</label>
                             <div class="col-md-5">
                                 <select class="form-control" name="id_not">
                                         <?php foreach($notebooks as $notebook): ?>
@@ -63,7 +63,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="date" class="col-md-4 control-label">Aparelhos de Som Disponíveis</label>
+                            <label for="id_sound" class="col-md-4 control-label">Aparelhos de Som Disponíveis</label>
                             <div class="col-md-5">
                                 <select class="form-control" name="id_sound">
                                         <?php foreach($sons as $som): ?>
@@ -74,7 +74,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="date" class="col-md-4 control-label">Microfones Disponíveis</label>
+                            <label for="id_mic" class="col-md-4 control-label">Microfones Disponíveis</label>
                             <div class="col-md-5">
                                 <select class="form-control" name="id_mic">
                                         <?php foreach($microfones as $microfone): ?>

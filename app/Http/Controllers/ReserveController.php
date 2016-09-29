@@ -183,12 +183,35 @@ class ReserveController extends Controller
 				            ->get();
 
 		//dd($som); 		            
-
+		//dd($request->user()->name);
+				            
         return view('reservas.create', ['dados' => $request,
         								'notebooks' => $notebooks,
         								'microfones' => $microfones, 
         								'projetores' => $projetores, 
         								'salas' => $salas,
         								'sons' => $sons]);
+
+    }
+
+    public function store(Request $request)
+    {
+
+    	//dd($request->user()->name);
+
+    	DB::table('reserves')->insert(
+		    [	'id_user' => $request->user()->id, 
+		    	'id_romm' => $request->id_romm,
+		    	'id_mic' => $request->id_mic,
+		    	'id_proj' => $request->id_proj,
+		    	'id_not' => $request->id_not,
+		    	'id_sound' => $request->id_sound,
+		    	'date' => $request->date,
+		    	'hbegin' => $request->hbegin,
+		    	'hend' => $request->hend]
+		);
+               
+        return redirect(route('reserve.index'));
+        
     }
 }
