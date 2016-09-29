@@ -182,7 +182,7 @@ class ReserveController extends Controller
 				            ->whereNotIn('id', $querynotin)
 				            ->get();
 
-		dd($som); 		            
+		//dd($som); 		            
 
         return view('reservas.create', ['dados' => $request,
         								'notebooks' => $notebooks,
