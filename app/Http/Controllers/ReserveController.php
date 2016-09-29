@@ -19,7 +19,13 @@ class ReserveController extends Controller
 	public function index(Request $request)
     {
     	//dd($request->user()->name);
-    	$data = date("Y/m/d");
+    	//$data = date("Y/m/d");
+    	if ($request->date){
+    		$data = $data;
+    	}
+    	else{
+    		$data = date("Y/m/d");
+    	}
 
         if($request->user()->office == 2){
             $reserves = DB::table('v_reservas')
