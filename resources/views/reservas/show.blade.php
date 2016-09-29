@@ -38,7 +38,7 @@
                                 <div class="form-group col-md-6 col-md-offset-4">
                                     <label for="hend" class="col-md-5 control-label"></label>
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-user"></i> Reservar
+                                        Reservar
                                     </button>
                                     <input id="id_usuario" type="hidden" name="id_usuario" value="<?php echo Auth::user()->id;?>">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

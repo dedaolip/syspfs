@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
+                <div class="panel-heading">Usuários</div>
 
                 <div class="panel-body">
                     <table class="table table-striped">
@@ -35,7 +35,7 @@
                         </table>
                         
                         <div class="col-lg-10">
-                            <a href="usuarios\create" class="col-lg-10">Novo</a>
+                            <a href="usuarios\create" class="btn btn-primary">Novo</a>
                             
 
                             
