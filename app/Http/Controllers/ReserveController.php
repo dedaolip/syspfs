@@ -19,6 +19,7 @@ class ReserveController extends Controller
 	public function index(Request $request)
     {
     	//dd($request->user()->name);
+    	$data = date("Y/m/d");
 
         if($request->user()->office == 2){
             $reserves = DB::table('v_reservas')
@@ -28,7 +29,9 @@ class ReserveController extends Controller
 		    return view('reservas.show', ['reserves' => $reserves]);
         }
         else{
-            $reserves = DB::table('v_reservas')->get();
+            $reserves = DB::table('v_reservas')
+            			->where('data', $data)
+            			->get();
 		    //dd($reserves);
 		    return view('reservas.show', ['reserves' => $reserves]);
         }
