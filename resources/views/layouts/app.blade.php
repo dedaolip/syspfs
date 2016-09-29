@@ -50,7 +50,7 @@
                     @else
                     <?php
                         if(Auth::user()->id != 2){
-                            echo "<li><a href=\"{{ url('/cadastro') }}\">CadastrosTeste</a></li>";
+                            echo "<li><a href=\"/cadastro\">CadastrosTeste</a></li>";
                         }
                     ?>
                     @endif

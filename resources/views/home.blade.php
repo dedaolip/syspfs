@@ -5,15 +5,21 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Cadastros</div>
 
-                <div class="panel-body">
-                    <p><a href="{!! route('user.index') !!}" style="color: black">Usuários</a></p>
-                    <p><a href="{!! route('romm.index') !!}" style="color: black">Salas</a></p>
-                    <p><a href="{!! route('not.index') !!}" style="color: black">Notebooks</a></p>
-                    <p><a href="{!! route('mic.index') !!}" style="color: black">Microfones</a></p>
-                    <p><a href="{!! route('project.index') !!}" style="color: black">Projetores</a></p>
-                    <p><a href="{!! route('sound.index') !!}" style="color: black">Aparelhos de Som</a></p>
+                <div class="panel-body control-label">               
+                    <p>
+                        <a href="{!! route('user.index') !!}" class="btn btn-default btn-lg active" style="color: black; margin-right: 15px;margin-left: 15px">Usuários</a>
+                        
+                        <a href="{!! route('romm.index') !!}" class="btn btn-default btn-lg active" style="color: black; margin-right: 15px;margin-left: 15px">Salas</a>
+                        
+                        <a href="{!! route('not.index') !!}" class="btn btn-default btn-lg active" style="color: black; margin-right: 15px;margin-left: 15px">Notebooks</a>
+
+                        <a href="{!! route('mic.index') !!}" class="btn btn-default btn-lg active" style="color: black; margin-right: 15px;margin-left: 15px">Microfones</a>
+
+                        <a href="{!! route('project.index') !!}" class="btn btn-default btn-lg active" style="color: black; margin-right: 15px;margin-left: 15px">Projetores</a>
+
+                        <a href="{!! route('sound.index') !!}" class="btn btn-default btn-lg active" style="color: black; margin-right: 15px;margin-left: 15px">Aparelhos de Som</a></p>
                 </div>
             </div>
         </div>
