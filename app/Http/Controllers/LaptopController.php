@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Laptop;
+use DB;
 
 class LaptopController extends Controller
 {
@@ -21,7 +22,9 @@ class LaptopController extends Controller
             return view('notebooks.show');
         }
         else{
-            $not = Laptop::paginate(10);
+            $not = DB::table('laptops')
+                        ->where('id', '<>', 0)
+                        ->get();
             return view('notebooks.show', ['nots' => $not]);
         }
     }

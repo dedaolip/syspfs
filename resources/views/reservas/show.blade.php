@@ -14,7 +14,7 @@
                                     <label for="date" class="col-md-2 control-label">Data</label>
 
                                     <div class="col-md-3">
-                                        <input id="date" type="Date" class="form-control" name="date">
+                                        <input id="date" type="Date" class="form-control" name="date" required="required">
                                     </div>
                                 </div>
                                     
@@ -22,7 +22,7 @@
                                     <label for="hbegin" class="col-md-2 control-label">Início</label>
 
                                     <div class="col-md-2">
-                                        <input id="hbegin" type="Time" class="form-control" name="hbegin">
+                                        <input id="hbegin" type="Time" class="form-control" name="hbegin" required="required">
                                     </div>
                                 </div>
                                     
@@ -30,7 +30,7 @@
                                     <label for="hend" class="col-md-2 control-label">Fim</label>
 
                                     <div class="col-md-2">
-                                        <input id="hend" type="Time" class="form-control" name="hend">
+                                        <input id="hend" type="Time" class="form-control" name="hend" required="required">
                                     </div>
                                 </div>  
 

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Sound;
+use DB;
 
 class SoundController extends Controller
 {
@@ -21,7 +22,9 @@ class SoundController extends Controller
             return view('sons.show');
         }
         else{
-            $sound = Sound::paginate(10);
+            $sound = DB::table('sounds')
+                        ->where('id', '<>', 0)
+                        ->get();
             return view('sons.show', ['sounds' => $sound]);
         }
     }

@@ -44,10 +44,6 @@
 
                         </table>
 
-                        <div class="col-lg-10 text-center">
-                            {!! $mics->render() !!}
-                        </div>
-
                         <div class="col-lg-10">
                             <a href="{!! route('mic.create') !!}" class="col-lg-10">Novo</a>
                             

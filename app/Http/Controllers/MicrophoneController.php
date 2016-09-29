@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Microphone;
+use DB;
 
 class MicrophoneController extends Controller
 {
@@ -21,7 +22,9 @@ class MicrophoneController extends Controller
             return view('microfones.show');
         }
         else{
-            $mic = Microphone::paginate(10);
+            $mic = DB::table('microphones')
+                        ->where('id', '<>', 0)
+                        ->get();
             return view('microfones.show', ['mics' => $mic]);
         }
     }

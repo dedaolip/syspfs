@@ -13,8 +13,8 @@
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Nome</label>
 
-                            <div class="col-md-1">
-                                <input id="name" type="text" class="col-md-1 form-control" name="name" value="{{ old('name') }}">
+                            <div class="col-md-5">
+                                <input id="name" type="text" class="col-md-5 form-control" name="name" value="{{ old('name') }}" required="required">
                             </div>
                         </div>
 

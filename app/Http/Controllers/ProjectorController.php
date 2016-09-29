@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Projector;
+use DB;
 
 class ProjectorController extends Controller
 {
@@ -21,7 +22,9 @@ class ProjectorController extends Controller
             return view('projetores.show');
         }
         else{
-            $project = Projector::paginate(10);
+            $project = DB::table('projectors')
+                        ->where('id', '<>', 0)
+                        ->get();
             return view('projetores.show', ['projects' => $project]);
         }
     }

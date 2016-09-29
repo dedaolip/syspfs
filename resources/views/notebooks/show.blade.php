@@ -44,10 +44,6 @@
 
                         </table>
 
-                        <div class="col-lg-10 text-center">
-                            {!! $nots->render() !!}
-                        </div>
-
                         <div class="col-lg-10">
                             <a href="{!! route('not.create') !!}" class="col-lg-10">Novo</a>
                             

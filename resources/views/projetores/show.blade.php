@@ -44,10 +44,6 @@
 
                         </table>
 
-                        <div class="col-lg-10 text-center">
-                            {!! $projects->render() !!}
-                        </div>
-
                         <div class="col-lg-10">
                             <a href="{!! route('project.create') !!}" class="col-lg-10">Novo</a>
                             

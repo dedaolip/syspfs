@@ -14,7 +14,7 @@
                             <label for="name" class="col-md-4 control-label">Nome</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="<?php echo $mic->name;?>">
+                                <input id="name" type="text" class="form-control" name="name" value="<?php echo $mic->name;?>" required="required">
                             </div>
                         </div>
 
@@ -22,7 +22,7 @@
                             <label for="brand" class="col-md-4 control-label">Marca</label>
 
                             <div class="col-md-6">
-                                <input id="brand" type="text" class="form-control" name="brand" value="<?php echo $mic->brand;?>">
+                                <input id="brand" type="text" class="form-control" name="brand" value="<?php echo $mic->brand;?>" required="required">
                             </div>
                         </div>
 
@@ -30,7 +30,7 @@
                             <label for="model" class="col-md-4 control-label">Modelo</label>
 
                             <div class="col-md-6">
-                                <input id="model" type="text" class="form-control" name="model" value="<?php echo $mic->model;?>">
+                                <input id="model" type="text" class="form-control" name="model" value="<?php echo $mic->model;?>" required="required">
                             </div>
                         </div>
 
@@ -38,7 +38,7 @@
                             <label for="patrimony" class="col-md-4 control-label">nº de Patrimônio</label>
 
                             <div class="col-md-6">
-                                <input id="patrimony" type="text" class="form-control" name="patrimony" value="<?php echo $mic->patrimony;?>">
+                                <input id="patrimony" type="text" class="form-control" name="patrimony" value="<?php echo $mic->patrimony;?>" required="required">
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@
                             <label for="dtaacquisition" class="col-md-4 control-label">Data de Aquisição</label>
 
                             <div class="col-md-6">
-                                <input id="dtaacquisition" type="date" class="form-control" name="dtaacquisition" value="<?php echo $mic->dtaacquisition;?>">
+                                <input id="dtaacquisition" type="date" class="form-control" name="dtaacquisition" value="<?php echo $mic->dtaacquisition;?>" required="required">
                             </div>
                         </div>
 

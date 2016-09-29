@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Romm;
+use DB;
 
 
 class RommController extends Controller
@@ -22,7 +23,9 @@ class RommController extends Controller
             return view('reservas.show');
         }
         else{
-            $romms = Romm::paginate(10);
+            $romms = DB::table('romms')
+                        ->where('id', '<>', 0)
+                        ->get();
             return view('salas.show', ['romms' => $romms]);
         }
     }

@@ -14,7 +14,7 @@
                             <label for="name" class="col-md-4 control-label">Nome</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required="required">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -28,7 +28,7 @@
                             <label for="cpf" class="col-md-4 control-label">CPF</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="number" class="form-control" name="cpf" value="{{ old('cpf') }}">
+                                <input id="cpf" type="number" class="form-control" name="cpf" value="{{ old('cpf') }}" required="required">
 
                                 @if ($errors->has('cpf'))
                                     <span class="help-block">
@@ -64,7 +64,7 @@
                             <label for="email" class="col-md-4 control-label">E-Mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required="required">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -78,7 +78,7 @@
                             <label for="password" class="col-md-4 control-label">Senha</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
+                                <input id="password" type="password" class="form-control" name="password" required="required">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
@@ -92,7 +92,7 @@
                             <label for="password-confirm" class="col-md-4 control-label">Confirmar Senha</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required="required">
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
