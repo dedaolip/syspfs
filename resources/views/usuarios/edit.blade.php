@@ -46,10 +46,16 @@
                             <div class="col-md-6">
                                 <!--<input id="office" type="number" class="form-control" name="office" value="<?php echo $usuario->office;?>"> -->
                                 <select id="office" class="form-control" name="office" value="<?php echo $usuario->office;?>">
-                                        <?php if ($usuario->office == 1){
-                                            echo "<option value=\"1\">Administrador</option>";};?>
                                         <option value="2" <?php if ($usuario->office == 2){echo "selected";};?>>Professor</option>
                                         <option value="3" <?php if ($usuario->office == 3){echo "selected";};?>>Funcionário</option>
+                                        <?php
+                                            if(Auth::user()->office == 1 and $usuario->office == 1){
+                                                echo "<option value=\"1\" selected >Administrador</option>";
+                                            }
+                                            elseif (Auth::user()->office == 1 and $usuario->office != 1) {
+                                                echo "<option value=\"1\">Administrador</option>";
+                                            }
+                                        ?>
                                 </select>
 
                                 @if ($errors->has('office'))

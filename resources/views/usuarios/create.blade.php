@@ -45,6 +45,11 @@
                                 <select id="office" class="form-control" name="office" value="{{ old('office') }}">
                                         <option value="2">Professor</option>
                                         <option value="3">Funcionário</option>
+                                        <?php
+                                            if(Auth::user()->office == 1){
+                                                echo "<option value=\"1\">Administrador</option>";
+                                            }
+                                        ?>
                                 </select>
 
                                 @if ($errors->has('office'))

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use DB;
 
 class UserController extends Controller
 {
@@ -19,8 +20,14 @@ class UserController extends Controller
         if($request->user()->office == 2){
             return view('reservas.show');
         }
-        else{
+        if($request->user()->office == 1){
             $users = User::paginate(10);
+            return view('usuarios.show', ['users' => $users]);
+        }
+        else{
+            $users = DB::table('users')
+                        ->where('users.office', '<>', 1)
+                        ->get();
             return view('usuarios.show', ['users' => $users]);
         }
     }
