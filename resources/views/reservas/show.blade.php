@@ -5,45 +5,36 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Reservas</div>
+                <div class="panel-heading"><h4>Reservas</h4></div>
 
                 <div class="panel-body">
-
+                            <h3>Reservar</h3>
                             <form class="form-horizontal" role="form" method="POST" action="{!! route('reserve.create')!!}">
                                 <div class="form-group">
-                                    <label for="date" class="col-md-2 control-label">Data</label>
 
                                     <div class="col-md-3">
+                                        <label for="date" class="col-md-2 control-label">Data</label>
                                         <input id="date" type="Date" class="form-control" name="date" required="required">
                                     </div>
-                                </div>
                                     
-                                <div class="form-group">    
-                                    <label for="hbegin" class="col-md-2 control-label">Início</label>
-
                                     <div class="col-md-2">
+                                        <label for="hbegin" class="col-md-2 control-label">Início</label>
                                         <input id="hbegin" type="Time" class="form-control" name="hbegin" required="required">
                                     </div>
-                                </div>
                                     
-                                <div class="form-group"> 
-                                    <label for="hend" class="col-md-2 control-label">Fim</label>
-
                                     <div class="col-md-2">
+                                        <label for="hend" class="col-md-2 control-label">Fim</label>
                                         <input id="hend" type="Time" class="form-control" name="hend" required="required">
                                     </div>
-                                </div>  
-
-                                
-                                <div class="form-group col-md-6 col-md-offset-4">
-                                    <label for="hend" class="col-md-5 control-label"></label>
-                                    <button type="submit" class="btn btn-primary">
-                                        Reservar
-                                    </button>
-                                    <input id="id_usuario" type="hidden" name="id_usuario" value="<?php echo Auth::user()->id;?>">
-                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <div class="col-md-2">
+                                        <label for="hend" class="col-md-5 control-label">&nbsp;</label>
+                                        <button type="submit" class="btn btn-primary">
+                                            Reservar
+                                        </button>
+                                        <input id="id_usuario" type="hidden" name="id_usuario" value="<?php echo Auth::user()->id;?>">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    </div>
                                 </div>
-                                
                             </form>
 
                               
