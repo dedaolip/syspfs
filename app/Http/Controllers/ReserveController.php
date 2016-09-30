@@ -20,26 +20,31 @@ class ReserveController extends Controller
     {
     	//dd($request->user()->name);
     	//$data = date("Y/m/d");
-    	if ($request->date){
-    		$data = $data;
+
+    	if ($request->data == null){
+    		$data = date("Y/m/d");
+    		//dd('entrou no if');
     	}
     	else{
-    		$data = date("Y/m/d");
+    		$data = $request->data;
+    		//dd('entrou no else');
     	}
+    	//dd('nao entrou no if else');
+    	//dd($data);
 
         if($request->user()->office == 2){
             $reserves = DB::table('v_reservas')
             			->where('id_usuario', $request->user()->id)
 				        ->get();
 		    //dd($reserves);
-		    return view('reservas.show', ['reserves' => $reserves]);
+		    return view('reservas.show', ['reserves' => $reserves, 'data' => $data]);
         }
         else{
             $reserves = DB::table('v_reservas')
             			->where('data', $data)
-            			->get();
+            			->get();			
 		    //dd($reserves);
-		    return view('reservas.show', ['reserves' => $reserves]);
+		    return view('reservas.show', ['reserves' => $reserves, 'data' => $data]);
         }
 
 

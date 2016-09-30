@@ -37,7 +37,23 @@
                                 </div>
                             </form>
 
-                              
+                             <h3>Reservas para o dia <?php echo date('d-m-Y', strtotime($data));?></h3> 
+
+                            <form class="form-horizontal" role="form" method="GET" action="{!! route('reserve.index')!!}">
+                                <div class="form-group">
+                                    <label for="data" class="col-md-2 control-label">Alterar data</label>
+
+                                    <div class="col-md-3">
+                                        <input id="data" type="date" class="form-control" name="data" value="<?php echo date('d-m-Y', strtotime($data));?>">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="submit" class="btn btn-primary">
+                                            Alterar
+                                        </button>
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    </div>
+                                </div>
+                            </form>
 
                             <table class="table table-striped">
                             <thead>
@@ -64,7 +80,7 @@
                                 <td style="vertical-align: middle"><?php echo $reserve->notebook;?></td>
                                 <td style="vertical-align: middle"><?php echo $reserve->som;?></td>
                                 <td style="vertical-align: middle"><?php echo $reserve->microfone;?></td>
-                                <td style="vertical-align: middle"><?php echo $reserve->data;?></td>
+                                <td style="vertical-align: middle"><?php echo date('d-m-Y', strtotime($reserve->data));?></td>
                                 <td style="vertical-align: middle"><?php echo $reserve->inicio;?></td>
                                 <td style="vertical-align: middle"><?php echo $reserve->fim;?></td>
                                 
