@@ -106,6 +106,7 @@ class ReserveController extends Controller
 
 		$projetores =   DB::table('projectors')
 				            ->whereNotIn('id', $querynotin)
+				            ->orwhere('id', '=', 1)
 				            ->get();
 
 		//dd($projetores);
@@ -132,6 +133,7 @@ class ReserveController extends Controller
 
 		$salas =   DB::table('romms')
 				            ->whereNotIn('id', $querynotin)
+				            ->orwhere('id', '=', 1)
 				            ->get();
 
 		//dd($salas);
@@ -158,6 +160,7 @@ class ReserveController extends Controller
 
 		$notebooks =   DB::table('laptops')
 				            ->whereNotIn('id', $querynotin)
+				            ->orwhere('id', '=', 1)
 				            ->get();
 
 		//dd($notebook);	
@@ -184,6 +187,7 @@ class ReserveController extends Controller
 
 		$microfones =   DB::table('microphones')
 				            ->whereNotIn('id', $querynotin)
+				            ->orwhere('id', '=', 1)
 				            ->get();
 
 		//dd($microfone);            
@@ -210,6 +214,7 @@ class ReserveController extends Controller
 
 		$sons =   DB::table('sounds')
 				            ->whereNotIn('id', $querynotin)
+				            ->orwhere('id', '=', 1)
 				            ->get();
 
 		//dd($som); 		            
