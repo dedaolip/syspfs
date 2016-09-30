@@ -15,23 +15,17 @@ class CreateReservesTable extends Migration
         Schema::create('reserves', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('id_user')->unsigned();
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->integer('id_user')();
 
-            $table->integer('id_romm')->unsigned();
-            $table->foreign('id_romm')->references('id')->on('romms');
+            $table->integer('id_romm');
 
-            $table->integer('id_mic')->unsigned();
-            $table->foreign('id_mic')->references('id')->on('microphones');
+            $table->integer('id_mic');
 
-            $table->integer('id_proj')->unsigned();
-            $table->foreign('id_proj')->references('id')->on('projectors');
+            $table->integer('id_proj');
 
-            $table->integer('id_not')->unsigned();
-            $table->foreign('id_not')->references('id')->on('laptops');
+            $table->integer('id_not');
 
-            $table->integer('id_sound')->unsigned();
-            $table->foreign('id_sound')->references('id')->on('sounds');
+            $table->integer('id_sound');
 
             $table->date('date');
 
