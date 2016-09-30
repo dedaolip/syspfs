@@ -35,6 +35,7 @@ class ReserveController extends Controller
         if($request->user()->office == 2){
             $reserves = DB::table('v_reservas')
             			->where('id_usuario', $request->user()->id)
+            			->where('data', $data)
 				        ->get();
 		    //dd($reserves);
 		    return view('reservas.show', ['reserves' => $reserves, 'data' => $data]);
