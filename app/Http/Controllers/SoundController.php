@@ -23,7 +23,7 @@ class SoundController extends Controller
         }
         else{
             $sound = DB::table('sounds')
-                        ->where('id', '<>', 0)
+                        ->where('id', '<>', 1)
                         ->get();
             return view('sons.show', ['sounds' => $sound]);
         }

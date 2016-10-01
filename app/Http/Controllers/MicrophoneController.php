@@ -23,7 +23,7 @@ class MicrophoneController extends Controller
         }
         else{
             $mic = DB::table('microphones')
-                        ->where('id', '<>', 0)
+                        ->where('id', '<>', 1)
                         ->get();
             return view('microfones.show', ['mics' => $mic]);
         }

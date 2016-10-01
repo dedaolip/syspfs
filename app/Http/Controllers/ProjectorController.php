@@ -23,7 +23,7 @@ class ProjectorController extends Controller
         }
         else{
             $project = DB::table('projectors')
-                        ->where('id', '<>', 0)
+                        ->where('id', '<>', 1)
                         ->get();
             return view('projetores.show', ['projects' => $project]);
         }

@@ -23,7 +23,7 @@ class LaptopController extends Controller
         }
         else{
             $not = DB::table('laptops')
-                        ->where('id', '<>', 0)
+                        ->where('id', '<>', 1)
                         ->get();
             return view('notebooks.show', ['nots' => $not]);
         }

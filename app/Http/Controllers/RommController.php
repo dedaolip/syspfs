@@ -24,7 +24,7 @@ class RommController extends Controller
         }
         else{
             $romms = DB::table('romms')
-                        ->where('id', '<>', 0)
+                        ->where('id', '<>', 1)
                         ->get();
             return view('salas.show', ['romms' => $romms]);
         }
