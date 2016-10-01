@@ -11,7 +11,6 @@
                     <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Nome</th>
                                 <th>e-mail</th>
                                 <th>Ação</th>
@@ -21,7 +20,6 @@
                             <tbody>
                             <?php foreach($users as $user): ?>
                             <tr>
-                                <td style="vertical-align: middle"><?php echo $user->id;?></td>
                                 <td style="vertical-align: middle"><?php echo $user->name;?></td>
                                 <td style="vertical-align: middle"><?php echo $user->email;?></td>
                                 <td style="vertical-align: middle">

@@ -11,7 +11,6 @@
                     <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Nome</th>
                                 <th>Status</th>
                                 <th>Ação</th>
@@ -27,7 +26,6 @@
                                         {$status = 'Ativo';};
                                     if($romm->status == 'I')
                                         {$status = 'Inativo';} ?>
-                                <td style="vertical-align: middle"><?php echo $romm->id;?></td>
                                 <td style="vertical-align: middle"><?php echo $romm->name;?></td>
                                 <td style="vertical-align: middle"><?php echo $status;?></td>
                                 <td style="vertical-align: middle">

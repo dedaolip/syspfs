@@ -11,7 +11,6 @@
                     <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Nome</th>
                                 <th>Marca</th>
                                 <th>Modelo</th>
@@ -29,7 +28,6 @@
                                         {$status = 'Ativo';};
                                     if($mic->status == 'I')
                                         {$status = 'Inativo';} ?>
-                                <td style="vertical-align: middle"><?php echo $mic->id;?></td>
                                 <td style="vertical-align: middle"><?php echo $mic->name;?></td>
                                 <td style="vertical-align: middle"><?php echo $mic->brand;?></td>
                                 <td style="vertical-align: middle"><?php echo $mic->model;?></td>

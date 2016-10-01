@@ -11,7 +11,6 @@
                     <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Nome</th>
                                 <th>Marca</th>
                                 <th>Modelo</th>
@@ -29,7 +28,6 @@
                                         {$status = 'Ativo';};
                                     if($not->status == 'I')
                                         {$status = 'Inativo';} ?>
-                                <td style="vertical-align: middle"><?php echo $not->id;?></td>
                                 <td style="vertical-align: middle"><?php echo $not->name;?></td>
                                 <td style="vertical-align: middle"><?php echo $not->brand;?></td>
                                 <td style="vertical-align: middle"><?php echo $not->model;?></td>
