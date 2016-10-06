@@ -250,25 +250,43 @@ class ReserveController extends Controller
         
     }
 
-   /* public function gravavarios(Request $request)
+    public function gravavarios(Request $request)
     {
-    		
+    		//variavel data recebe $request->dia_inicio mais um dia
+    		//$data = date('Y-m-d', strtotime("+1 days",strtotime($request->dia_inicio)));
 
-			while $request->dia_inicio <= $request->dia_fim{
+    		//dd([$request->all(), $data]);
+    		//dd($request->all());
+    		$user = $request->id_user;
+    		$romm = $request->id_romm;
+    		$hbegin = $request->hbegin;
+    		$hend = $request->h_fim;
+
+			while ($request->dia_inicio <= $request->dia_fim){
+
 				// Varivel que recebe o dia da semana (0 = Domingo, 1 = Segunda ...)
 				//$diasemana_numero = date('w', strtotime($data));
-				if $request->dia_semana == date('w', strtotime($request->dia_inicio)){
+				if ($request->dia_semana == date('w', strtotime($request->dia_inicio))){
+					//dd([$request->dia_inicio,'entrou no if']);
+					//dd([$request->dia_semana,date('w', strtotime($request->dia_inicio)),$request->dia_inicio]);
+					//dd([$romm,$request->dia_inicio,$hbegin,$hend]);
 					DB::table('reserves')->insert(
-												    [	'id_user' => $request->id_user, 
-												    	'id_romm' => $request->id_laboratorio,
+												    [	//'id_user' => $request->id_user, 
+												    	'id_user' => $user, 
+												    	'id_romm' => $romm,
+												    	'id_mic' => 1,
+												    	'id_proj' => 1,
+												    	'id_not' => 1,
+												    	'id_sound' => 1,
 												    	'date' => $request->dia_inicio,
-												    	'hbegin' => $request->h_inicio,
-												    	'hend' => $request->h_fim]
+												    	'hbegin' => $hbegin,
+												    	'hend' => $hend]
 												);	
-				};
-				$request->dia_inicio = date('Y-m-d', strtotime("+1 day",strtotime($request->dia_inicio)));
-			};
+				}
+
+				$request->dia_inicio = date('Y-m-d', strtotime("+1 days",strtotime($request->dia_inicio)));
+			}
         return redirect(route('reserve.index'));
         
-    }*/
+    }
 }

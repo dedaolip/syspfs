@@ -45,8 +45,11 @@ class HomeController extends Controller
             $salas =   DB::table('romms')
                             ->where('id', '<>', 1)
                             ->get();
+            $professores =   DB::table('users')
+                            ->where('office', '=', 2)
+                            ->get();
             //return view('reservas.createvarios');
-            return view('reservas.createvarios', ['salas' => $salas]);
+            return view('reservas.createvarios', ['salas' => $salas, 'professores' => $professores]);
         }
     }
 }
