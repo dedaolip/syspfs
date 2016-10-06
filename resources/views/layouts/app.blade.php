@@ -51,6 +51,7 @@
                     <?php
                         if(Auth::user()->id != 2){
                             echo "<li><a href=\"/cadastro\">CadastrosTeste</a></li>";
+                            echo "<li><a href=\"/cadastro/varios\">Cadastros por Período</a></li>";
                         }
                     ?>
                     @endif

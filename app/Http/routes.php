@@ -24,6 +24,7 @@ Route::get('/', 'ReserveController@index');
 
 Route::group(['prefix' => 'cadastro'], function() {
     Route::get('',                  ['as' => 'cadastro.index',  'uses' => 'HomeController@index']);
+    Route::get('varios',            ['as' => 'cadastro.varios', 'uses' => 'HomeController@cadastrovarios']);
 });
 
 Route::auth();

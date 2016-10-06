@@ -249,4 +249,26 @@ class ReserveController extends Controller
         return redirect(route('reserve.index'));
         
     }
+
+   /* public function gravavarios(Request $request)
+    {
+    		
+
+			while $request->dia_inicio <= $request->dia_fim{
+				// Varivel que recebe o dia da semana (0 = Domingo, 1 = Segunda ...)
+				//$diasemana_numero = date('w', strtotime($data));
+				if $request->dia_semana == date('w', strtotime($request->dia_inicio)){
+					DB::table('reserves')->insert(
+												    [	'id_user' => $request->id_user, 
+												    	'id_romm' => $request->id_laboratorio,
+												    	'date' => $request->dia_inicio,
+												    	'hbegin' => $request->h_inicio,
+												    	'hend' => $request->h_fim]
+												);	
+				};
+				$request->dia_inicio = date('Y-m-d', strtotime("+1 day",strtotime($request->dia_inicio)));
+			};
+        return redirect(route('reserve.index'));
+        
+    }*/
 }

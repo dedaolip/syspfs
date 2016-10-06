@@ -330,3 +330,60 @@ ALTER TABLE `sounds`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+-- criar a procedure para reservar uma sala varios dias
+
+DELIMITER $$
+
+CREATE PROCEDURE reservar_salas(  dia_inicio    DATE,
+                                  dia_fim         DATE,
+                                  dia_semana      integer,
+                                  h_inicio        time,
+                                  h_fim           time,
+                                  id_laboratorio  integer,
+                                  id_user         integer)
+DECLARE @vdData data;
+
+BEGIN
+  set @vdData = dia_inicio;
+    
+    WHILE (@vdData <= @ia_fim) DO
+      /* codigo do while aqui */
+      if (DATE_FORMAT(@vdData,'%w') = dia_semana) then
+          insert into reserves (id_user, id_romm, date, hbegin, hend)
+            values (id_user, id_laboratorio, @vdData, h_inicio, h_fim);
+      end if;
+
+
+      SET @vdData = date_add(@vdData, interval 1 day);
+    END WHILE;
+END $$
+DELIMITER ;
+
+-- fim criação da procedure  
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE reservar_salas(  dia_inicio    DATE,
+                                            dia_fim         DATE,
+                                            dia_semana      integer,
+                                            h_inicio        time,
+                                            h_fim           time,
+                                            id_laboratorio  integer,
+                                            id_user         integer)
+BEGIN
+          #DECLARE vdData DATE;
+          
+            #set vdData = dia_inicio;
+    
+            WHILE (dia_inicio <= dia_fim) DO
+              /* codigo do while aqui */
+              if(DATE_FORMAT(dia_inicio,'%w')=dia_semana)then
+                  insert into reserves (id_user, id_romm, date, hbegin, hend)
+                    values (id_user, id_laboratorio, dia_inicio, h_inicio, h_fim);
+              end if;
+
+
+              SET dia_inicio = date_add(dia_inicio, interval 1 day);
+            END WHILE;
+                
+       END
