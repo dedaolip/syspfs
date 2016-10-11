@@ -23,35 +23,70 @@ class ReserveController extends Controller
 
     	if ($request->data == null){
     		$data = date("Y/m/d");
-    		//dd('entrou no if');
     	}
     	else{
     		$data = $request->data;
-    		//dd('entrou no else');
     	}
-    	//dd('nao entrou no if else');
-    	//dd($data);
 
-        if($request->user()->office == 2){
+        /*if($request->user()->office == 2){
             $reserves = DB::table('v_reservas')
             			->where('id_usuario', $request->user()->id)
             			->where('data', $data)
 				        ->get();
-		    //dd($reserves);
 		    return view('reservas.show', ['reserves' => $reserves, 'data' => $data]);
         }
         else{
             $reserves = DB::table('v_reservas')
             			->where('data', $data)
-            			->get();			
-		    //dd($reserves);
+            			->get();	
+		    return view('reservas.show', ['reserves' => $reserves, 'data' => $data]);
+        }*/
+
+        if($request->user()->office == 2){
+            $reserves = DB::table('reserves')
+				            ->join('users', 'users.id', '=', 'reserves.id_user')
+				            ->join('romms', 'romms.id', '=', 'reserves.id_romm')
+				            ->join('projectors', 'projectors.id', '=', 'reserves.id_proj')
+				            ->join('laptops', 'laptops.id', '=', 'reserves.id_not')
+				            ->join('sounds', 'sounds.id', '=', 'reserves.id_sound')
+				            ->join('microphones', 'microphones.id', '=', 'reserves.id_mic')
+				            ->select(	'users.name as usuario', 
+				            			'romms.name as sala', 
+				            			'projectors.name as projetor',
+				            			'laptops.name as notebook', 
+				            			'sounds.name as som', 
+				            			'microphones.name as microfone',
+				            			'reserves.date as data', 
+				            			'reserves.hbegin as inicio', 
+				            			'reserves.hend as final')
+				            ->where('reserves.id_user', $request->user()->id)
+            				->where('reserves.date', $data)
+				            ->get();
 		    return view('reservas.show', ['reserves' => $reserves, 'data' => $data]);
         }
-
-
-	    //$reserves = DB::table('v_reservas')->get();
-	    //dd($reserves);
-	    //return view('reservas.show', ['reserves' => $reserves]);
+        else{
+            $reserves = DB::table('reserves')
+				            ->join('users', 'users.id', '=', 'reserves.id_user')
+				            ->join('romms', 'romms.id', '=', 'reserves.id_romm')
+				            ->join('projectors', 'projectors.id', '=', 'reserves.id_proj')
+				            ->join('laptops', 'laptops.id', '=', 'reserves.id_not')
+				            ->join('sounds', 'sounds.id', '=', 'reserves.id_sound')
+				            ->join('microphones', 'microphones.id', '=', 'reserves.id_mic')
+				            ->select(	'users.name as usuario', 
+				            			'romms.name as sala', 
+				            			'projectors.name as projetor',
+				            			'laptops.name as notebook', 
+				            			'sounds.name as som', 
+				            			'microphones.name as microfone',
+				            			'reserves.date as data', 
+				            			'reserves.hbegin as inicio', 
+				            			'reserves.hend as final')
+				            //->where('reserves.id_user', $request->user()->id)
+            				->where('reserves.date', $data)
+				            ->get();
+            //dd($reserves)->all();
+		    return view('reservas.show', ['reserves' => $reserves, 'data' => $data]);
+        }
         
     }
 

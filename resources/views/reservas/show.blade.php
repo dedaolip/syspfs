@@ -82,7 +82,7 @@
                                 <td style="vertical-align: middle"><?php echo $reserve->microfone;?></td>
                                 <td style="vertical-align: middle"><?php echo date('d-m-Y', strtotime($reserve->data));?></td>
                                 <td style="vertical-align: middle"><?php echo $reserve->inicio;?></td>
-                                <td style="vertical-align: middle"><?php echo $reserve->fim;?></td>
+                                <td style="vertical-align: middle"><?php echo $reserve->final;?></td>
                                 
                             </tr>
                             <?php endforeach;?>
